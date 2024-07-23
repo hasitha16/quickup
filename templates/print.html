@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print-outs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='print.css') }}">
+</head>
+<body>
+    <div id="container">
+        <h1 id="header">Print-outs</h1>
+    </div>
+    <div class="form-wrapper">
+        <form action="{{ url_for('print_page') }}" method="post" enctype="multipart/form-data">
+            <div class="form-control">
+                <input type="text" name="name" required>
+                <label>Enter Name</label>
+            </div>
+            <div class="form-control">
+                <input type="tel" name="phone_number" required>
+                <label>Enter phone number</label>
+            </div>
+            <div class="form-control">
+                <input type="number" name="copies" required>
+                <label>No. of copies</label>
+            </div>
+            <div class="form-control">
+                <select name="location" required>
+                    <option value="" disabled selected></option>
+                    <option value="library">Library</option>
+                    <option value="canteen">Canteen</option>
+                    <option value="admin">Admin Block</option>
+                </select>
+                <label>Location</label>
+            </div>
+            <div class="form-control">
+                <input type="date" name="date" required>
+                <label>Date</label>
+            </div>
+            <div class="form-control">
+                <input type="file" id="pdf-upload" name="pdf_upload" accept="application/pdf" required>
+                <label>Upload PDF</label>
+            </div>
+            <div class="form-control">
+                <select name="sides" required>
+                    <option value="" disabled selected></option>
+                    <option value="one">One Side</option>
+                    <option value="both">Both Sides</option>
+                </select>
+                <label>Sides</label>
+            </div>
+            <div class="form-control">
+                <select name="color" required>
+                    <option value="" disabled selected></option>
+                    <option value="bw">Black and White</option>
+                    <option value="color">Color</option>
+                </select>
+                <label>Color</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="print.js"></script>
+</body>
+</html>

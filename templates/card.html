@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Payment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='card.css') }}">
+</head>
+<body>
+    <div id="container">
+        <h1 id="header">Card</h1>
+    </div>
+    <div class="form-wrapper">
+        <form action="{{ url_for('process_payment') }}" method="post">
+            <h2>Payment Information</h2>
+            <br>
+            <div class="form-control">
+                <input type="text" name="card-number" required>
+                <label>Card Number</label>
+            </div>
+            <div class="form-control">
+                <input type="text" name="card-name" required>
+                <label>Cardholder Name</label>
+            </div>
+            <div class="form-control">
+                <div id="Expiry">Expiry Date</div>
+                <div class="expiry-date">
+                    <select name="expiry-month" required>
+                        <option value="" disabled selected>Month</option>
+                        {% for month in range(1, 13) %}
+                            <option value="{{ '%02d' % month }}">{{ '%02d' % month }}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="expiry-year" required>
+                        <option value="" disabled selected>Year</option>
+                        {% for year in range(current_year, current_year + 10) %}
+                            <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-control">
+                <input type="text" name="cvv" required>
+                <label>CVV</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="print.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='payment.css') }}">
+</head>
+<body>
+    <div id="container">
+        <h1 id="header">Payment</h1>
+    </div>
+    <div class="form-wrapper">
+        <div class="payment-options">
+            <a href="{{ url_for('phonepe') }}" class="payment-option">
+                <img src="{{ url_for('static', filename='images/phonepe.png') }}" alt="PhonePe">
+                <p>PhonePe</p>
+            </a>
+            <br>
+            <a href="{{ url_for('card') }}" class="payment-option">
+                <img src="{{ url_for('static', filename='images/card.png') }}" alt="Credit/Debit Card">
+                <p>Credit/Debit Card</p>
+            </a>
+            <br>
+            <a href="{{ url_for('cod') }}" class="payment-option">
+                <img src="{{ url_for('static', filename='images/cod.png') }}" alt="Cash on Delivery">
+                <p>Cash on Delivery</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

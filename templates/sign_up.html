@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <title>Quickup</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    
+    <div id="container">
+        <h1 id="header">Quickup</h1>
+    </div>
+    <div class="form-wrapper">
+        <h2>Sign Up</h2>
+        <form action="/sign_up" method="post">
+            <div class="form-control">
+                <input type="number" name="number" required>
+                <label for="number">Enter phone number</label>
+            </div>
+            <div class="form-control">
+                <input type="text" name="uname" required>
+                <label for="uname">Enter username</label>
+            </div>
+            <div class="form-control">
+                <input type="password" name="psw" required>
+                <label for="psw">Enter password</label>
+            </div>
+            <div class="form-control">
+                <input type="password" name="psw-repeat" required>
+                <label for="psw-repeat">Re-enter password</label>
+            </div>
+            <button type="submit" >Sign Up</button>
+            <div class="signed">
+                <input type="checkbox" id="signed">
+                <label for="remember-me">Stay signed in</label>
+            </div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='sign_in.js') }}"></script>
+
+</body>
+</html>

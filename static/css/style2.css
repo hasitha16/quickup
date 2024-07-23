@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+}
+#header {
+    padding: 20px;
+    color: rgb(7, 4, 87);
+    margin: 20px;
+    margin-left: 30px;
+    font-size: 70px;
+}
+body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: url(images/app2.jpg);
+    background-position: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.form-wrapper {
+    position: absolute;
+    margin-top: 15px;
+    left: 50%;
+    top: 50%;
+    width: 430px;
+    padding: 60px;
+    padding-bottom: 40px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.75);
+    transform: translate(-50%,-50%);
+    border-radius: 3%;
+}
+.form-wrapper h2{
+    color: #fff;
+    font-size: 2rem;
+}
+.form-wrapper form{
+    margin: 25px 0 65px;
+}
+form .form-control {
+    position: relative;
+    height: 50px;
+    margin-bottom: 16px;
+}
+.form-control input {
+    height: 100%;
+    width: 100%;
+    background: #333;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    padding: 0 20px;
+}
+.form-control input:is(:focus, :valid) {
+    padding: 16px 20px 0;
+    background: #444;
+}
+.form-control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    color: #8c8c8c;
+    pointer-events: none;
+    font-size: 1rem;
+    transform: translateY(-50%);
+    transition: all 0.1s ease; 
+}
+.form-control input:is(:focus, :valid) ~ label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+form button {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    color: #000;
+    font-weight: 500;
+    border-radius: 4px;
+    background: rgb(187, 104, 52);
+    margin: 25px 0 10px;
+}
+form button:hover {
+    background: rgb(202, 94, 35);
+}
+form .signed {
+    display: flex;
+}
+form .signed input {
+    margin-right: 5px;
+    accent-color: #b3b3b3;
+}
+@media (max-width: 740px) {
+    body::before {
+        display: none;
+    }
+    nav, .form-wrapper {
+        padding: 20px;
+    }
+    nav a img {
+        width: 140px;
+    }
+    .form-wrapper {
+        top: 43%;
+        width: 100%
+    }
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+}
